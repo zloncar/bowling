@@ -16,8 +16,23 @@ describe "ten-pin bowling" do
   end
 
   it "one line no spares no strikes" do
+    play
     total = 0
     expect( total ).to eq( 17 )
+  end
+
+  def play
+    Line.new
+  end
+
+  class Line
+    def initialize
+      @line = Hash.new( 0 )
+      (1..10).each do |frame|
+        @line[frame] = [ ( rand() *10 ).to_i, ( rand() * 10 ).to_i ]
+      end
+      puts @line
+    end
   end
 
   class Try

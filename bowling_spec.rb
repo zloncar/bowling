@@ -11,7 +11,7 @@ describe "ten-pin bowling" do
     try1 = Try.new( 6 )
     try2 = Try.new( 3 )
     frame = Frame.new
-    frame.score = [try1.score, try2.score]
+    frame.score = [ try1, try2 ]
     expect( frame.score ).to eq( 9 )
   end
 
@@ -25,15 +25,12 @@ describe "ten-pin bowling" do
   end
 
   class Frame
-
     def score
       @score
     end
-
     def score=( scores )
-      @score = scores.first + scores.last
+      @score = scores.first.score + scores.last.score
     end
-
   end
 
 end

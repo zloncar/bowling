@@ -15,6 +15,11 @@ describe "ten-pin bowling" do
     expect( frame.score ).to eq( 9 )
   end
 
+  it "one line no spares no strikes" do
+    total = 0
+    expect( total ).to eq( 17 )
+  end
+
   class Try
     def initialize( score )
       @score = score

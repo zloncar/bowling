@@ -1,6 +1,6 @@
 describe "ten-pin bowling" do
 
-  PINS = 10
+  MAX_PINS = 10
 
   it "one try" do
     try = Try.new( 8 )

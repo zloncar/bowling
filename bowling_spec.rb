@@ -12,15 +12,22 @@ describe "ten-pin bowling" do
     try1 = Try.new( 6 )
     try2 = Try.new( 3 )
     frame = Frame.new
-    frame.score = [ try1, try2 ]
+    frame.score = [ try1.score, try2.score ]
     expect( frame.score ).to eq( 9 )
   end
 
   it "one line no spares no strikes" do
     game = play
-    puts game.line
-    puts game.total
     expect( game.total ).to eq( $total )
+  end
+
+  it "two tries add up to ten" do
+    frame = Frame.new
+    try1 = ( rand() * 10 ).to_i
+    try2 = ( rand() * 10 ).to_i
+    frame.score = [ 2, 3 ]
+#   puts frame.score
+#   expect( frame.score ).to be <= 10
   end
 
   def play
@@ -66,7 +73,7 @@ describe "ten-pin bowling" do
     end
 
     def score=( scores )
-      @score = scores.first.score + scores.last.score
+      @score = scores.first + scores.last
     end
   end
 

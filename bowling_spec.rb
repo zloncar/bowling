@@ -28,4 +28,7 @@ describe "ten-pin bowling" do
     expect( frame.score ).to be <= 10
   end
 
+  it "checks if spare" do
+    expect( frame.spare ).to be true
+  end
 end

@@ -26,6 +26,10 @@ class Line
     @line.each { |k, v| @total += v[0] + v[1] }
     @total
   end
+
+  def is_spare?( frame )
+    true
+  end
 end
 
 class Try

@@ -33,4 +33,10 @@ describe "ten-pin bowling" do
     frame.score = [ 8, 2 ]
     expect( frame.is_spare?( frame.score ) ).to be true
   end
+
+  it "calculates total with one spare" do
+    game = play
+    puts game.line
+    expect( game.total ).to eq( 73 )
+  end
 end

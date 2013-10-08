@@ -1,3 +1,5 @@
+require_relative 'bowling.rb'
+
 describe "ten-pin bowling" do
 
   MAX_PINS = 10
@@ -28,53 +30,6 @@ describe "ten-pin bowling" do
     frame.score = [ try1, try2 ]
     puts frame.score
     expect( frame.score ).to be <= 10
-  end
-
-  def play
-    Line.new
-  end
-
-  class Line
-    def initialize
-      @line = Hash.new( 0 )
-      (1..10).each do |frame|
-        try1 = ( rand() * 10 ).to_i
-        try2 = ( rand() * 10 ).to_i
-        $total += try1 + try2
-        @line[frame] = [ try1, try2 ]
-      end
-    end
-
-    def line
-      @line
-    end
-
-    def total
-      @total = 0
-      @line.each { |k, v| @total += v[0] + v[1] }
-      @total
-    end
-  end
-
-  class Try
-    def initialize( score )
-      @score = score
-    end
-
-    def score
-      @score
-    end
-  end
-
-
-  class Frame
-    def score
-      @score
-    end
-
-    def score=( scores )
-      @score = scores.first + scores.last
-    end
   end
 
 end

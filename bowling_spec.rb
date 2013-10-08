@@ -2,9 +2,6 @@ require_relative 'bowling.rb'
 
 describe "ten-pin bowling" do
 
-  MAX_PINS = 10
-  $total = 0
-
   it "one try" do
     try = Try.new( 8 )
     expect( try.score).to eq( 8 )

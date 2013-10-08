@@ -1,6 +1,10 @@
+MAX_PINS = 10
+$total = 0
+
 def play
   Line.new
 end
+
 
 class Line
   def initialize

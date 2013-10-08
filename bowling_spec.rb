@@ -29,6 +29,8 @@ describe "ten-pin bowling" do
   end
 
   it "checks if spare" do
-    expect( frame.spare ).to be true
+    frame = Frame.new
+    frame.score = [ 8, 2 ]
+    expect( frame.is_spare?( frame.score ) ).to be true
   end
 end

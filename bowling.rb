@@ -27,9 +27,6 @@ class Line
     @total
   end
 
-  def is_spare?( frame )
-    true
-  end
 end
 
 class Try
@@ -51,5 +48,9 @@ class Frame
   def score=( scores )
     @score = scores.first + scores.last
     @score = MAX_PINS if @score > MAX_PINS
+  end
+
+  def is_spare?( score )
+    score == 10
   end
 end

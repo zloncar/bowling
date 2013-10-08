@@ -18,6 +18,8 @@ describe "ten-pin bowling" do
 
   it "one line no spares no strikes" do
     game = play
+    puts game.line
+    puts game.total
     expect( game.total ).to eq( $total )
   end
 
@@ -31,7 +33,7 @@ describe "ten-pin bowling" do
       (1..10).each do |frame|
         try1 = ( rand() * 10 ).to_i
         try2 = ( rand() * 10 ).to_i
-        $total += try1
+        $total += try1 + try2
         @line[frame] = [ try1, try2 ]
       end
     end
@@ -42,7 +44,7 @@ describe "ten-pin bowling" do
 
     def total
       @total = 0
-      @line.each { |k, v| @total += v[0] }
+      @line.each { |k, v| @total += v[0] + v[1] }
       @total
     end
   end

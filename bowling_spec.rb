@@ -25,7 +25,6 @@ describe "ten-pin bowling" do
     try1 = ( rand() * 10 ).to_i
     try2 = ( rand() * 10 ).to_i
     frame.score = [ try1, try2 ]
-    puts frame.score
     expect( frame.score ).to be <= 10
   end
 

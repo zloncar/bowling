@@ -46,5 +46,6 @@ class Frame
 
   def score=( scores )
     @score = scores.first + scores.last
+    @score = MAX_PINS if @score > MAX_PINS
   end
 end

@@ -5,11 +5,11 @@ class Line
   attr_reader :score
 
   def try( pins )
-    @score = pins
+    @score ||= pins
   end
 
   def frame( *pins )
-    @score = pins.inject(:+)
+    @score ||= pins.inject(:+)
   end
 
 end

@@ -18,7 +18,12 @@ describe "ten-pin bowling" do
     expect( @line.score ).to eq( 36 )
   end
 
+  it "check if spare" do
+    expect( @line.is_spare_frame?( [ 7, 3 ] ) ).to eq( true )
+  end
+
   it "frames have one spare" do
+    pending
     @line.frames( [ 1, 2, 3, 4, 5, 5, 6, 1 ] )
     expect( @line.score ).to eq( 34 )
   end

@@ -16,4 +16,8 @@ class Line
     @score ||= pins.inject(:+)
   end
 
+  def is_spare_frame?( pins )
+    pins.inject(:+) == MAX_PINS
+  end
+
 end

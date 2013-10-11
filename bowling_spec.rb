@@ -9,8 +9,18 @@ describe "ten-pin bowling" do
   end
 
   it "one frame" do
-    @line.frame( 8, 1 )
+    @line.frame( [ 8, 1 ] )
     expect( @line.score ).to eq( 9 )
+  end
+
+  it "many frames" do
+    @line.frames( [ 1, 2, 3, 4, 5, 6, 7, 8 ] )
+    expect( @line.score ).to eq( 36 )
+  end
+
+  it "frames have one spare" do
+    @line.frames( [ 1, 2, 3, 4, 5, 5, 6, 1 ] )
+    expect( @line.score ).to eq( 34 )
   end
 
 end

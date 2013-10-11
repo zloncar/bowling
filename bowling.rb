@@ -8,7 +8,11 @@ class Line
     @score ||= pins
   end
 
-  def frame( *pins )
+  def frame( pins )
+    @score ||= pins.inject(:+)
+  end
+
+  def frames( pins )
     @score ||= pins.inject(:+)
   end
 

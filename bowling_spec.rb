@@ -23,7 +23,6 @@ describe "ten-pin bowling" do
   end
 
   it "frames have one spare" do
-    pending
     @line.frames( [ 1, 2, 3, 4, 5, 5, 6, 1 ] )
     expect( @line.score ).to eq( 34 )
   end

@@ -1,10 +1,11 @@
 require_relative 'bowling.rb'
 
 describe "ten-pin bowling" do
+  before( :each ) { @line = Line.new }
 
   it "one try" do
-    try = Try.new( 8 )
-    expect( try.score).to eq( 8 )
+    @line.try( 8 )
+    expect( @line.total ).to eq( 8 )
   end
 
 end

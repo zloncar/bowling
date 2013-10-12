@@ -5,8 +5,9 @@ class Line
     if rolls.size.zero?
       total
     else
-      total += ( rolls[0,2].inject(:+) * spare )
-      spare = rolls[0,2].inject(:+) == 10 ? 2 : 1
+      frame_score = rolls[0,2].inject(:+)
+      total += ( frame_score * spare )
+      spare = rolls[0,2].inject(:+) == MAX_PINS ? 2 : 1
       2.times { rolls.shift }
       score( rolls, total, spare )
     end

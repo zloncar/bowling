@@ -22,8 +22,8 @@ describe "ten-pin bowling" do
 
   it "total from rolls - spare at the end" do
     line = Line.new
-    roll = [ 2, 3, 4, 6, 7 ]
-    expect( line.score( roll, 0, 1 ) ).to eq( 29 )
+    roll = [ 2, 3, 4, 6, 4]
+    expect( line.score( roll, 0, 1 ) ).to eq( 19 )
   end
 
 end

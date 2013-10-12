@@ -32,9 +32,14 @@ describe "ten-pin bowling" do
     expect( score( roll, 0, 1 ) ).to eq( 13 )
   end
 
-  it "rolls - strike - not at the end" do
+  it "rolls - strike with only one frame left" do
     roll = [ 10, 0, 3, 5 ]
     expect( score( roll, 0, 1 ) ).to eq( 26 )
+  end
+
+  it "rolls - strike with two frames left" do
+    roll = [ 10, 0, 3, 5, 2, 4 ]
+    expect( score( roll, 0, 1 ) ).to eq( 38 )
   end
 
 end

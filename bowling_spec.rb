@@ -1,35 +1,11 @@
 require_relative 'bowling.rb'
 
 describe "ten-pin bowling" do
-  before( :each ) { @line = Line.new }
 
-  it "one try" do
-    @line.try( 8 )
-    expect( @line.score ).to eq( 8 )
-  end
-
-  it "one frame" do
-    @line.frame( [ 8, 1 ] )
-    expect( @line.score ).to eq( 9 )
-  end
-
-  it "many frames" do
-    @line.frames( [ 1, 2, 3, 4, 5, 6, 7, 8 ] )
-    expect( @line.score ).to eq( 36 )
-  end
-
-  it "check if spare" do
-    expect( @line.is_spare_frame?( [ 7, 3 ] ) ).to eq( true )
-  end
-
-  it "frames have one spare" do
-    @line.frames( [ 1, 2, 3, 4, 5, 5, 6, 1 ] )
-    expect( @line.score ).to eq( 34 )
-  end
-
-  it "frames have more than one spare" do
-    @line.frames( [ 8, 2, 8, 2, 5, 3, 6, 1 ] )
-    expect( @line.score ).to eq( 53 )
+  it "calculate total from several rolls" do
+    line = Line.new
+    roll = [ 2, 3, 7, 1, 4, 4 ]
+    expect( line.score( roll ) ).to eq( 21 )
   end
 
 end

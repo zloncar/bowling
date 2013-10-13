@@ -37,4 +37,9 @@ describe "ten-pin bowling" do
     expect( score( roll, 0, [1] ) ).to eq( 38 )
   end
 
+  it "rolls - strikes, spares, all ..." do
+    roll = [ 2, 5, 6, 4, 10, 0, 1, 2, 3, 4 ]
+    expect( score( roll, 0, [1] ) ).to eq( 57 )
+  end
+
 end

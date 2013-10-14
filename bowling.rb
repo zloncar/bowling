@@ -1,13 +1,12 @@
-MAX_PINS = 10
 def score( rolls, total, spare )
   if rolls.size.zero?
     total
   else
     frame_score = rolls[0,2].inject(:+)
     total += ( frame_score * spare.shift )
-    if rolls.first == MAX_PINS
-      2.times { spare.push( 2 ) }
-    elsif rolls[0,2].inject(:+) == MAX_PINS
+    if rolls.first == 10
+      2.times { spare << 2 }
+    elsif rolls[0,2].inject(:+) == 10
       spare << 2
     else
       spare << 1

@@ -4,10 +4,9 @@ def score( rolls, total, spare )
   else
     frame_score = rolls[0,2].inject(:+)
     total += ( frame_score * spare.shift )
-    if rolls.first == 10
-      2.times { spare << 2 }
-    elsif rolls[0,2].inject(:+) == 10
-      spare << 2
+    how_many = rolls.first == 10 ? 2 : 1
+    if rolls[0,2].inject(:+) == 10
+      how_many.times { spare << 2 }
     else
       spare << 1
     end

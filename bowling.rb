@@ -1,4 +1,4 @@
-def score( rolls, total, spare )
+def score( rolls, total = 0, spare = [1] )
   if rolls.size.zero?
     total
   else
